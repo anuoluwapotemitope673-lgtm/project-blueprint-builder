@@ -62,7 +62,6 @@ export function ContactForm({ preselected }: { preselected?: string }) {
       return;
     }
     setStatus("sent");
-    e.currentTarget?.reset?.();
   }
 
   if (status === "sent") {
