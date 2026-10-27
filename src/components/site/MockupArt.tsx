@@ -244,7 +244,7 @@ export function MockupArt({ layout, seed, label }: { layout: Layout; seed: numbe
               <rect x={112 + i * 92} y={64} width={n(24, 50)} height={10} rx={5} fill={dark} opacity={0.7} />
             </g>
           ))}
-          <rect x={102} y={102} width={traceW(r)} height={164} rx={8} fill={dark} opacity={0.05} />
+          <rect x={102} y={102} width={190} height={164} rx={8} fill={dark} opacity={0.05} />
           {Array.from({ length: bars }, (_, i) => {
             const h = n(30, 120);
             return <rect key={i} x={115 + i * (165 / bars)} y={250 - h} width={165 / bars - 6} height={h} rx={3} fill={i % 3 === 0 ? acc : mid} />;
@@ -322,6 +322,3 @@ export function MockupArt({ layout, seed, label }: { layout: Layout; seed: numbe
   );
 }
 
-function traceW(r: () => number) {
-  return 190 + Math.floor(r() * 0);
-}

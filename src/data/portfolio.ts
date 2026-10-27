@@ -192,8 +192,6 @@ const NICHE_PARAMS: Record<ServiceId, [number, number]> = {
   marketing: [23, 6],
 };
 
-const SUB_INDUSTRY_OVERRIDE: Partial<Record<ServiceId, number[]>> = {};
-void SUB_INDUSTRY_OVERRIDE;
 
 function slug(s: string) {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
