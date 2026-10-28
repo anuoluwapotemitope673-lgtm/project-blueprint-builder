@@ -4,7 +4,7 @@ import type { Layout } from "@/data/portfolio";
  * changes palette, composition, element counts and placement. Colours here are
  * illustration data (like image pixels), not UI theme colours. */
 
-const PALETTES = [
+const PALETTES: [string, string, string, string][] = [
   ["#1f2a1c", "#d8f26a", "#f4efe4", "#6b7b4f"],
   ["#2b1d3a", "#ff9e7a", "#fbeee6", "#7c5c9e"],
   ["#0f2a3d", "#7fd1e8", "#eef6f8", "#2e6f8e"],
@@ -170,7 +170,7 @@ export function MockupArt({ layout, seed, label }: { layout: Layout; seed: numbe
         body = (
           <>
             {nodes.slice(1).map((nd, i) => (
-              <path key={i} d={`M${nodes[i].x + 30} ${nodes[i].y + 18} C ${nodes[i].x + 60} ${nodes[i].y + 18}, ${nd.x} ${nd.y + 18}, ${nd.x + 10} ${nd.y + 18}`} stroke={light} strokeWidth={2} fill="none" strokeDasharray="4 4" />
+              <path key={i} d={`M${nodes[i]!.x + 30} ${nodes[i]!.y + 18} C ${nodes[i]!.x + 60} ${nodes[i]!.y + 18}, ${nd.x} ${nd.y + 18}, ${nd.x + 10} ${nd.y + 18}`} stroke={light} strokeWidth={2} fill="none" strokeDasharray="4 4" />
             ))}
             {nodes.map((nd, i) => (
               <g key={i}>
