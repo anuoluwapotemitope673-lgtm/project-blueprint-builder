@@ -20,7 +20,7 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/")({
-  validateSearch: (s) => searchSchema.parse({ service: searchSchema.shape.service.safeParse(s.service).success ? s.service : undefined }),
+  validateSearch: (s) => searchSchema.parse({ service: searchSchema.shape.service.safeParse(s["service"]).success ? s["service"] : undefined }),
   head: () => ({
     meta: [
       { title: "Mercy Digital Riches — Freelance Websites, Social Media & Email Marketing" },
@@ -377,7 +377,7 @@ function Faq() {
 }
 
 /* ---------- CONTACT ---------- */
-function Contact({ preselected }: { preselected?: string }) {
+function Contact({ preselected }: { preselected?: string | undefined }) {
   return (
     <section id="contact" className="section-dark relative overflow-hidden py-24 lg:py-32">
       <div className="pointer-events-none absolute -left-40 bottom-0 h-[30rem] w-[30rem] rounded-full bg-lime/10 blur-3xl" />

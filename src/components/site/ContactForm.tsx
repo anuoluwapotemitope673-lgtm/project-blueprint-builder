@@ -22,7 +22,7 @@ type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 const field =
   "mt-1.5 w-full rounded-xl border border-ink-line bg-ink-soft px-4 py-3 text-sm text-paper placeholder:text-paper/35 transition-colors focus:border-lime focus:outline-none";
 
-export function ContactForm({ preselected }: { preselected?: string }) {
+export function ContactForm({ preselected }: { preselected?: string | undefined }) {
   const [service, setService] = useState(serviceTitle(preselected) ?? "");
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");

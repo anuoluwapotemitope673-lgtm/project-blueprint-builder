@@ -31,7 +31,7 @@ function rng(seed: number) {
 
 export function MockupArt({ layout, seed, label }: { layout: Layout; seed: number; label: string }) {
   const r = rng(seed * 9301 + 49297);
-  const p = PALETTES[Math.floor(r() * PALETTES.length)];
+  const p = PALETTES[Math.floor(r() * PALETTES.length)]!;
   const [dark, acc, light, mid] = p;
   const n = (min: number, max: number) => Math.floor(min + r() * (max - min + 1));
   const flip = r() > 0.5;
@@ -223,7 +223,7 @@ export function MockupArt({ layout, seed, label }: { layout: Layout; seed: numbe
             <rect width={110} height={12} rx={6} fill={dark} />
             <rect y={22} width={50} height={9} rx={4} fill={mid} />
             {lines(0, 45, 140, 4, dark, 11)}
-            {[0, 1, 2].map((i) => <circle key={i} cx={10 + i * 24} cy={110} r={8} fill={[acc, dark, mid][i]} />)}
+            {[0, 1, 2].map((i) => <circle key={i} cx={10 + i * 24} cy={110} r={8} fill={[acc, dark, mid][i]!} />)}
             <rect y={140} width={145} height={26} rx={13} fill={dark} />
             <rect x={45} y={150} width={55} height={6} rx={3} fill={light} />
           </g>

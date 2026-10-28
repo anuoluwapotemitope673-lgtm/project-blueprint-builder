@@ -202,8 +202,8 @@ function build(): Project[] {
   (Object.keys(TYPES) as ServiceId[]).forEach((cat, ci) => {
     const [step, offset] = NICHE_PARAMS[cat];
     for (let i = 0; i < 50; i++) {
-      const type = TYPES[cat][i % 10];
-      const [business, industry] = BUSINESSES[(i * step + offset) % BUSINESSES.length];
+      const type = TYPES[cat][i % 10]!;
+      const [business, industry] = BUSINESSES[(i * step + offset) % BUSINESSES.length]!;
       const title = `${type.name} for a ${business}`;
       out.push({
         id: `${cat}-${slug(type.name)}-${slug(business)}`,
