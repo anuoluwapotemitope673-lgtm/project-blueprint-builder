@@ -4,7 +4,7 @@ import type { Layout } from "@/data/portfolio";
  * changes palette, composition, element counts and placement. Colours here are
  * illustration data (like image pixels), not UI theme colours. */
 
-const PALETTES = [
+const PALETTES: [string, string, string, string][] = [
   ["#1f2a1c", "#d8f26a", "#f4efe4", "#6b7b4f"],
   ["#2b1d3a", "#ff9e7a", "#fbeee6", "#7c5c9e"],
   ["#0f2a3d", "#7fd1e8", "#eef6f8", "#2e6f8e"],
@@ -31,7 +31,7 @@ function rng(seed: number) {
 
 export function MockupArt({ layout, seed, label }: { layout: Layout; seed: number; label: string }) {
   const r = rng(seed * 9301 + 49297);
-  const p = PALETTES[Math.floor(r() * PALETTES.length)];
+  const p = PALETTES[Math.floor(r() * PALETTES.length)]!;
   const [dark, acc, light, mid] = p;
   const n = (min: number, max: number) => Math.floor(min + r() * (max - min + 1));
   const flip = r() > 0.5;
@@ -170,7 +170,7 @@ export function MockupArt({ layout, seed, label }: { layout: Layout; seed: numbe
         body = (
           <>
             {nodes.slice(1).map((nd, i) => (
-              <path key={i} d={`M${nodes[i].x + 30} ${nodes[i].y + 18} C ${nodes[i].x + 60} ${nodes[i].y + 18}, ${nd.x} ${nd.y + 18}, ${nd.x + 10} ${nd.y + 18}`} stroke={light} strokeWidth={2} fill="none" strokeDasharray="4 4" />
+              <path key={i} d={`M${nodes[i]!.x + 30} ${nodes[i]!.y + 18} C ${nodes[i]!.x + 60} ${nodes[i]!.y + 18}, ${nd.x} ${nd.y + 18}, ${nd.x + 10} ${nd.y + 18}`} stroke={light} strokeWidth={2} fill="none" strokeDasharray="4 4" />
             ))}
             {nodes.map((nd, i) => (
               <g key={i}>
@@ -223,7 +223,7 @@ export function MockupArt({ layout, seed, label }: { layout: Layout; seed: numbe
             <rect width={110} height={12} rx={6} fill={dark} />
             <rect y={22} width={50} height={9} rx={4} fill={mid} />
             {lines(0, 45, 140, 4, dark, 11)}
-            {[0, 1, 2].map((i) => <circle key={i} cx={10 + i * 24} cy={110} r={8} fill={[acc, dark, mid][i]} />)}
+            {[0, 1, 2].map((i) => <circle key={i} cx={10 + i * 24} cy={110} r={8} fill={[acc, dark, mid][i]!} />)}
             <rect y={140} width={145} height={26} rx={13} fill={dark} />
             <rect x={45} y={150} width={55} height={6} rx={3} fill={light} />
           </g>
