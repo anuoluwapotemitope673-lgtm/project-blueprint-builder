@@ -8,6 +8,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { MockupArt } from "@/components/site/MockupArt";
 import { ProjectCard, ProjectDialog } from "@/components/site/ProjectCard";
 import { ContactForm } from "@/components/site/ContactForm";
+import portrait from "@/assets/mercy-portrait.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SERVICES, type ServiceId } from "@/data/services";
@@ -223,16 +224,14 @@ function About() {
     <section id="about" className="py-24 lg:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
-          {/* Replace this placeholder with a real portrait when available. */}
-          <div className="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem] border-2 border-dashed border-ink/20 bg-paper-muted">
-            <div className="absolute inset-0 grid place-items-center p-8 text-center">
-              <div>
-                <div className="mx-auto grid h-24 w-24 place-items-center rounded-full bg-ink font-display text-4xl italic text-lime">M</div>
-                <p className="mt-5 text-sm font-semibold">Portrait coming soon</p>
-                <p className="mt-1 text-xs text-muted-foreground">A professional photo will be placed here.</p>
-              </div>
-            </div>
-            <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-lime/50 blur-2xl" />
+          <div className="relative mx-auto max-w-sm">
+            <div className="absolute -bottom-6 -right-6 h-40 w-40 rounded-full bg-lime/50 blur-2xl" />
+            <img
+              src={portrait.url}
+              alt="Mercy, founder of Mercy Digital Agency"
+              className="relative aspect-[4/5] w-full rounded-[2rem] object-cover object-top shadow-lift"
+              loading="lazy"
+            />
           </div>
         </Reveal>
         <div className="lg:col-span-7">

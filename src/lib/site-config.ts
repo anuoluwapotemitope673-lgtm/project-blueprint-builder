@@ -1,6 +1,6 @@
 // Single place to edit contact details and profile links.
 export const SITE = {
-  name: "Mercy Digital Riches",
+  name: "Mercy Digital Agency",
   email: "mercydigitalagency1@gmail.com",
   whatsappNumberDisplay: "0816 324 2998",
   whatsappIntl: "2348163242998",
