@@ -56,7 +56,7 @@ export function Footer() {
       </div>
       <div className="border-t border-ink-line">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-2 px-6 py-6 text-xs text-paper/45 sm:flex-row">
-          <p>© {new Date().getFullYear()} Mercy Digital Riches. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Mercy Digital Agency. All rights reserved.</p>
           <p>Portfolio pieces marked "Concept" are original demonstration work.</p>
         </div>
       </div>

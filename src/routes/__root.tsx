@@ -78,9 +78,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mercy Digital Riches" },
+      { title: "Mercy Digital Agency" },
       { name: "description", content: "Freelance websites, social media, email marketing, e-commerce and online course platforms." },
-      { name: "author", content: "Mercy Digital Riches" },
+      { name: "author", content: "Mercy Digital Agency" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
