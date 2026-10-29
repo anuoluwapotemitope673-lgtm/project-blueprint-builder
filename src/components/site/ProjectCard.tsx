@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check } from "lucide-react";
 import type { Project } from "@/data/portfolio";
 import { SERVICES } from "@/data/services";
-import { MockupArt } from "./MockupArt";
+import { ProjectImage } from "./ProjectImage";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +21,7 @@ export function ProjectCard({ p, onOpen }: { p: Project; onOpen: (p: Project) =>
     <article className="group flex flex-col overflow-hidden rounded-2xl border bg-card shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-lift">
       <button type="button" onClick={() => onOpen(p)} className="relative block aspect-[4/3] overflow-hidden text-left" aria-label={`View details: ${p.title}`}>
         <div className="h-full w-full transition-transform duration-700 group-hover:scale-[1.04]">
-          <MockupArt layout={p.layout} seed={p.seed} label={`Illustrative mockup: ${p.subcategory}`} />
+          <ProjectImage p={p} />
         </div>
         <span className="absolute left-3 top-3"><AuthBadge p={p} /></span>
       </button>
@@ -44,7 +44,7 @@ export function ProjectDialog({ p, onClose }: { p: Project | null; onClose: () =
         {p && (
           <>
             <div className="relative aspect-[16/9] overflow-hidden rounded-t-3xl">
-              <MockupArt layout={p.layout} seed={p.seed} label={`Illustrative mockup: ${p.subcategory}`} />
+              <ProjectImage p={p} />
               <span className="absolute left-4 top-4"><AuthBadge p={p} /></span>
             </div>
             <div className="space-y-6 p-6 sm:p-8">
