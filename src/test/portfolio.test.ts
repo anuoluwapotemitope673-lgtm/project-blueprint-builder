@@ -24,3 +24,19 @@ describe("contact links", () => {
     expect(whatsappHref()).toMatch(/^https:\/\/wa\.me\/2348163242998\?text=/);
   });
 });
+
+import { mockupFor, mockupKeyFor, MOCKUPS } from "@/data/portfolio-images";
+describe("portfolio images", () => {
+  it("assigns an image to every project", () => {
+    for (const p of PROJECTS) expect(mockupFor(p)).toBeTruthy();
+  });
+  it("never shares an image across different service areas", () => {
+    const owner = new Map<string, string>();
+    for (const p of PROJECTS) {
+      const k = mockupKeyFor(p);
+      expect(owner.get(k) ?? p.category).toBe(p.category);
+      owner.set(k, p.category);
+    }
+    expect(owner.size).toBe(Object.keys(MOCKUPS).length);
+  });
+});
