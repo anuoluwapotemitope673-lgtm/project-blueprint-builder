@@ -24,9 +24,9 @@ export const Route = createFileRoute("/")({
   validateSearch: (s) => searchSchema.parse({ service: searchSchema.shape.service.safeParse(s["service"]).success ? s["service"] : undefined }),
   head: () => ({
     meta: [
-      { title: "Mercy Digital Riches — Freelance Websites, Social Media & Email Marketing" },
+      { title: "Mercy Digital Agency — Freelance Websites, Social Media & Email Marketing" },
       { name: "description", content: "Independent freelancer offering website design, social media management, email marketing, Shopify e-commerce, online course platforms and digital marketing support." },
-      { property: "og:title", content: "Mercy Digital Riches — Freelance Digital Services" },
+      { property: "og:title", content: "Mercy Digital Agency — Freelance Digital Services" },
       { property: "og:description", content: "One creative partner for websites, content, email marketing, e-commerce and online learning platforms." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

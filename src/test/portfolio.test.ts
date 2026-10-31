@@ -30,13 +30,27 @@ describe("portfolio images", () => {
   it("assigns an image to every project", () => {
     for (const p of PROJECTS) expect(mockupFor(p)).toBeTruthy();
   });
-  it("never shares an image across different service areas", () => {
+  it("assigns 60 unique assets and never shares an image between project types", () => {
     const owner = new Map<string, string>();
     for (const p of PROJECTS) {
       const k = mockupKeyFor(p);
-      expect(owner.get(k) ?? p.category).toBe(p.category);
-      owner.set(k, p.category);
+      const src = mockupFor(p);
+      expect(src).toBeDefined();
+      if (!src) throw new Error(`Missing mockup: ${k}`);
+      expect(owner.get(src) ?? k).toBe(k);
+      owner.set(src, k);
     }
-    expect(owner.size).toBe(Object.keys(MOCKUPS).length);
+    expect(owner.size).toBe(60);
+    expect(Object.values(MOCKUPS).flatMap(Object.values)).toHaveLength(60);
+  });
+  it("matches every image to its exact category and project description", () => {
+    for (const p of PROJECTS) {
+      const images: Readonly<Record<string, string>> = MOCKUPS[p.category];
+      expect(Object.hasOwn(images, p.subcategory)).toBe(true);
+      expect(mockupFor(p)).toBe(images[p.subcategory]);
+    }
+  });
+  it("does not give an unknown type an unrelated image", () => {
+    expect(mockupFor({ category: "social", subcategory: "Unknown project" })).toBeUndefined();
   });
 });
