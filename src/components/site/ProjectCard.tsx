@@ -43,8 +43,8 @@ export function ProjectDialog({ p, onClose }: { p: Project | null; onClose: () =
       <DialogContent className="max-h-[92vh] max-w-3xl overflow-y-auto rounded-3xl p-0">
         {p && (
           <>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-t-3xl">
-              <ProjectImage p={p} />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-t-3xl">
+              <ProjectImage p={p} eager />
               <span className="absolute left-4 top-4"><AuthBadge p={p} /></span>
             </div>
             <div className="space-y-6 p-6 sm:p-8">
