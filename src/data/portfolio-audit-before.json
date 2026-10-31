@@ -1,0 +1,615 @@
+{
+  "total": 300,
+  "unique_types": 60,
+  "images": 60,
+  "records_per_image": 5,
+  "repeated_content": [
+    "approach",
+    "deliverables",
+    "layout"
+  ],
+  "types": [
+    {
+      "category": "social",
+      "type": "Monthly Content Calendar",
+      "layout": "calendar",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Instagram Feed Design",
+      "layout": "feed",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Educational Carousel Series",
+      "layout": "carousel",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Reels Concept Pack",
+      "layout": "phone",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Product Launch Campaign Creatives",
+      "layout": "carousel",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Branded Story Templates",
+      "layout": "phone",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Content Strategy Playbook",
+      "layout": "report",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Community Engagement Plan",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Promotional Graphics Set",
+      "layout": "feed",
+      "existing_records": 5
+    },
+    {
+      "category": "social",
+      "type": "Monthly Social Reporting Template",
+      "layout": "dashboard",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Welcome Email Sequence",
+      "layout": "email",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Abandoned-Cart Flow",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Monthly Newsletter Design",
+      "layout": "email",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Product Launch Email Campaign",
+      "layout": "email",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Re-engagement Campaign",
+      "layout": "email",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Klaviyo Segmentation Map",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Mailchimp Onboarding Workflow",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Seasonal Promotion Campaign",
+      "layout": "email",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Event Invitation Series",
+      "layout": "email",
+      "existing_records": 5
+    },
+    {
+      "category": "email",
+      "type": "Lead-Nurturing Sequence",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Business Website",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Conversion Landing Page",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "WordPress Website Concept",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Website Redesign",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Personal Portfolio Site",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Booking & Appointments Site",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Mobile-First Microsite",
+      "layout": "phone",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Interactive HTML/CSS/JS Concept",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Membership Website Concept",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "web",
+      "type": "Lead-Generation Website",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Shopify Storefront Design",
+      "layout": "store",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Product Detail Page",
+      "layout": "product",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Collection Page Structure",
+      "layout": "store",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Homepage Redesign",
+      "layout": "store",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Cart & Checkout Experience",
+      "layout": "product",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Product Catalogue Organisation",
+      "layout": "dashboard",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Store UX Audit",
+      "layout": "report",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Mobile Shopping Experience",
+      "layout": "phone",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Sales-Channel Integration Plan",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "ecommerce",
+      "type": "Gift & Bundle Builder Concept",
+      "layout": "product",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "LearnDash Course Website",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Tutor LMS Academy",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Student Dashboard",
+      "layout": "dashboard",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Lesson Page Layout",
+      "layout": "lesson",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Course Sales Page",
+      "layout": "browser",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Skool Community Setup",
+      "layout": "community",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Circle Community Concept",
+      "layout": "community",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Student Onboarding Experience",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Quiz & Assessment Interface",
+      "layout": "lesson",
+      "existing_records": 5
+    },
+    {
+      "category": "courses",
+      "type": "Resource Library",
+      "layout": "store",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Lead Magnet Design",
+      "layout": "report",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Marketing Funnel Map",
+      "layout": "funnel",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Customer Journey Map",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Campaign Planning Document",
+      "layout": "report",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Content Repurposing System",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Marketing Reporting Dashboard",
+      "layout": "dashboard",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Newsletter Signup Experience",
+      "layout": "phone",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Website Audit",
+      "layout": "report",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Marketing Automation Concept",
+      "layout": "flow",
+      "existing_records": 5
+    },
+    {
+      "category": "marketing",
+      "type": "Digital Launch Asset Kit",
+      "layout": "carousel",
+      "existing_records": 5
+    }
+  ],
+  "assets": [
+    {
+      "path": "src/assets/mockups/course-community.jpg",
+      "sha256": "e2d8a8b58c20dee47b4a2add541e1caf0bfa9cb14791ed8af68cf2078eb8c153"
+    },
+    {
+      "path": "src/assets/mockups/course-lesson.jpg",
+      "sha256": "13b3c41158dd11d39fdbc887193ffc594d2d8e4f53d6aaf8848a9be758690788"
+    },
+    {
+      "path": "src/assets/mockups/courses-circle-community-concept.jpg",
+      "sha256": "76535f2ca39941dfc943fc5f6b3c421fb55b361fdf6400c6d8cbbd6f806bab06"
+    },
+    {
+      "path": "src/assets/mockups/courses-course-sales-page.jpg",
+      "sha256": "89c570a2153a9e8384b1e55b9f3acf101f29e461d3cb4d84de307b8fe7cce5fe"
+    },
+    {
+      "path": "src/assets/mockups/courses-learndash-course-website.jpg",
+      "sha256": "365a0086cf0faad959ab08af7d1dc53e34975c202be41df4bbaff00da5352506"
+    },
+    {
+      "path": "src/assets/mockups/courses-quiz-assessment-interface.jpg",
+      "sha256": "f3149d6173f4877d2286c26dc96582f4fc2808e1b853298bb01311f7fe71742e"
+    },
+    {
+      "path": "src/assets/mockups/courses-resource-library.jpg",
+      "sha256": "05d8345b1062602192e973ab77824c874658e25ab1f7b376fc88a5a880d87640"
+    },
+    {
+      "path": "src/assets/mockups/courses-student-dashboard.jpg",
+      "sha256": "8c242004fe32f790acfecd9c82d879c75210e19332034440f00bfc501f8c5446"
+    },
+    {
+      "path": "src/assets/mockups/courses-student-onboarding-experience.jpg",
+      "sha256": "4cc94552a0853f605f75420fd0f0c3cf2247c6afd0e12355e540977aa5c02118"
+    },
+    {
+      "path": "src/assets/mockups/courses-tutor-lms-academy.jpg",
+      "sha256": "edd947b7d285dbdc52f8016c4ac4fb729100ae99644358a6d80809bad69b5582"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-cart-checkout-experience.jpg",
+      "sha256": "f5dad8cbebffc4f537ff913eb0bfe33d585aa56092793fef5b17e07f204f5e25"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-collection-page-structure.jpg",
+      "sha256": "b051c8a0af69fc86477c814fed3a3708eeeaf14883220ffe705428a1a8192308"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-gift-bundle-builder-concept.jpg",
+      "sha256": "5a8b27626bf6bc3df42e1cc7a2538dac9ed2f96a5f5ba358eb92a7013c65c880"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-homepage-redesign.jpg",
+      "sha256": "ed98d7bc77901b0524c02b3a2948f641dffa18210fc2fe5e5d4d247c3ef70936"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-mobile-shopping-experience.jpg",
+      "sha256": "b64816ffdc38512a179c17ddea74a2c2888ba4310e54ac709e4080c77b06be1f"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-product-catalogue-organisation.jpg",
+      "sha256": "001f895c0b4d4cfff4f9f36a88177bcc92d04b04ded87a42f0f240f6cc9d4f45"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-sales-channel-integration-plan.jpg",
+      "sha256": "ba68f4c1a308089ef94394955df5fd12838cc61afaeea7102b370b87ca8721db"
+    },
+    {
+      "path": "src/assets/mockups/ecommerce-store-ux-audit.jpg",
+      "sha256": "0f1a2a8800685c9365cd7af86b77763c11ba71087be648f37d4d78195e2bd156"
+    },
+    {
+      "path": "src/assets/mockups/email-event-invitation-series.jpg",
+      "sha256": "974dda4dbe1d32a98f64a2906895ecbad5fdb6f2544145e5c4aa9bf12f660f9a"
+    },
+    {
+      "path": "src/assets/mockups/email-flow.jpg",
+      "sha256": "853ef56deb07723898ce8164f314f0031c3a7ff4bfa499ff9078b43486c512b1"
+    },
+    {
+      "path": "src/assets/mockups/email-klaviyo-segmentation-map.jpg",
+      "sha256": "1c903dd00f65926819ca34310d193551eacccc9c05768577ccb4c2c10d4c790e"
+    },
+    {
+      "path": "src/assets/mockups/email-lead-nurturing-sequence.jpg",
+      "sha256": "8d7eb45a161fb6249a96cae7adb79e4dcfe05d505a3b2d4e17461d713f1e1274"
+    },
+    {
+      "path": "src/assets/mockups/email-mailchimp-onboarding-workflow.jpg",
+      "sha256": "d714afa4d78b572348a055e8f83d29d81e5c4ee52669b057d086f5900aad838f"
+    },
+    {
+      "path": "src/assets/mockups/email-newsletter.jpg",
+      "sha256": "701ace9aab2ce5bb8780be7c7fa5dd44584bfc05c2e1aaa5575c46d9981d10c3"
+    },
+    {
+      "path": "src/assets/mockups/email-product-launch-email-campaign.jpg",
+      "sha256": "496034f0e6d33943ba8856ef7a6f7d1f220c5d66cc85ee6f89cccde168feaf5b"
+    },
+    {
+      "path": "src/assets/mockups/email-re-engagement-campaign.jpg",
+      "sha256": "603f78465a578627873438d4f86a03bfe35810daab6ab82468aacc1586d852a9"
+    },
+    {
+      "path": "src/assets/mockups/email-seasonal-promotion-campaign.jpg",
+      "sha256": "8f402ad8dced0b3952bc484737bb86a42f503d6ef62b80e66b6184baed5db499"
+    },
+    {
+      "path": "src/assets/mockups/email-welcome-email-sequence.jpg",
+      "sha256": "8dd2f36f71493062553587ee7f53831166a24db33eaa0db2d7537edf878babfb"
+    },
+    {
+      "path": "src/assets/mockups/marketing-campaign-planning-document.jpg",
+      "sha256": "bfcd95f381096439c37466fc85ce8de69c666c3f3105d78aa3de0213f8b42a1b"
+    },
+    {
+      "path": "src/assets/mockups/marketing-content-repurposing-system.jpg",
+      "sha256": "e211c0cc55eabc4bb89e991faaf8f0fedebea56eac77cd91ab54c1ad0c245f51"
+    },
+    {
+      "path": "src/assets/mockups/marketing-customer-journey-map.jpg",
+      "sha256": "fe7d136cde3d0f9b5451294d4b6af2928a0edeef2d321f53fd572b8d00ff4b0c"
+    },
+    {
+      "path": "src/assets/mockups/marketing-dashboard.jpg",
+      "sha256": "8b4c68370a188ed45dfe1f478a1a4d4e4e38c24bc5e600b1d75a7772e5538407"
+    },
+    {
+      "path": "src/assets/mockups/marketing-digital-launch-asset-kit.jpg",
+      "sha256": "dc8d247219f203763bedadb5c8cc2bf1bdc9859d1a9661af5f123a5100e073a3"
+    },
+    {
+      "path": "src/assets/mockups/marketing-marketing-automation-concept.jpg",
+      "sha256": "e4e1dc2970f5fa68da90b84bf5f97fb0ce5f1e1b0b1e3a27c2161e39bacba9c7"
+    },
+    {
+      "path": "src/assets/mockups/marketing-marketing-funnel-map.jpg",
+      "sha256": "9e4376032f5c45c410e54fddc6db834bde0ddc8ac4b716c63c61b470e11b958f"
+    },
+    {
+      "path": "src/assets/mockups/marketing-newsletter-signup-experience.jpg",
+      "sha256": "b758581d4121e91047fe93b48087597160d402eeeba265ddd0927c5ac3b0d390"
+    },
+    {
+      "path": "src/assets/mockups/marketing-report.jpg",
+      "sha256": "710c69966c12a097c9d58222baa1a7d1adfd97b31db4e933d6decf0ff01f2553"
+    },
+    {
+      "path": "src/assets/mockups/marketing-website-audit.jpg",
+      "sha256": "df1b0aa2f803db554847571e8ac6d23c01c967f1c1725861533341a38d814874"
+    },
+    {
+      "path": "src/assets/mockups/shop-product.jpg",
+      "sha256": "5929f5eb38850c4f1771057e9c7ef2e6b788999fdce2726d4e15e5b15f780f46"
+    },
+    {
+      "path": "src/assets/mockups/shop-store.jpg",
+      "sha256": "c00c3abe380af52f80f714049ea8a6c901049b2e497c20898113dbe053d9cbeb"
+    },
+    {
+      "path": "src/assets/mockups/social-branded-story-templates.jpg",
+      "sha256": "0543e6a4a4f9a170047b0ada95379c13919915f793d79ebc47bea6dbf357eeea"
+    },
+    {
+      "path": "src/assets/mockups/social-community-engagement-plan.jpg",
+      "sha256": "d49d460258ac474c901f804a51330be28792f0bb81c5ba3852655138f6a477f3"
+    },
+    {
+      "path": "src/assets/mockups/social-content-strategy-playbook.jpg",
+      "sha256": "4f7c9047b8f305f70b4ebdcf0dbb2195e31e7d8bf2931a4a344512d0a1876244"
+    },
+    {
+      "path": "src/assets/mockups/social-educational-carousel-series.jpg",
+      "sha256": "455ef1c8b2374b6300d5068ff5877c5dd72d4c519b38b3b59f2410395b28669e"
+    },
+    {
+      "path": "src/assets/mockups/social-feed.jpg",
+      "sha256": "156b023ff6f88c1c1d2a5680bddb0971857d3197f8ba3ffbf7eea489249b702a"
+    },
+    {
+      "path": "src/assets/mockups/social-monthly-content-calendar.jpg",
+      "sha256": "17003e68b8342b67dc68f974a6523167e2b5ee0202f461ec915e78036c2a8ce2"
+    },
+    {
+      "path": "src/assets/mockups/social-monthly-social-reporting-template.jpg",
+      "sha256": "37db97469366c55ebae3bee9e1dac7a973b6acd884b6f9aa8bb1230e6ac17a01"
+    },
+    {
+      "path": "src/assets/mockups/social-product-launch-campaign-creatives.jpg",
+      "sha256": "38ef0fff6aa2c28e0b34d60c6845d21ac5e5096b003830f969203d15aefb1ad3"
+    },
+    {
+      "path": "src/assets/mockups/social-promotional-graphics-set.jpg",
+      "sha256": "c27d047e25ca2be47c2f3e5c0d2ad92aa16f04b4b9e1652900628c0ef34960fa"
+    },
+    {
+      "path": "src/assets/mockups/social-stories.jpg",
+      "sha256": "e5fd985ebe54ce3b134dac7ebc8955bf89e166870574deae2ec1b48d4b069045"
+    },
+    {
+      "path": "src/assets/mockups/web-booking-appointments-site.jpg",
+      "sha256": "91a38ee73a9c730429c4c5b2d06bb60065bffa15f5ebf0e322c2bb297ff250fe"
+    },
+    {
+      "path": "src/assets/mockups/web-business.jpg",
+      "sha256": "af6a48c0d68b4fbd05c8076a805211ab7e112ac08c0ec84cf34a901fc93230d4"
+    },
+    {
+      "path": "src/assets/mockups/web-interactive-html-css-js-concept.jpg",
+      "sha256": "6310dc24e2112bd18ef116204c6e2913f6d5a16547d5dfc61b52cc2b4897c40d"
+    },
+    {
+      "path": "src/assets/mockups/web-lead-generation-website.jpg",
+      "sha256": "fdbac786dc14e3049525ca6f19856cf4d7a9f45bc79f3ed93dd7d22893671849"
+    },
+    {
+      "path": "src/assets/mockups/web-membership-website-concept.jpg",
+      "sha256": "194b5efcbd44e7d777f1767915ea566d91d1808a7d127d9bd358d39adb3fbd53"
+    },
+    {
+      "path": "src/assets/mockups/web-mobile-first-microsite.jpg",
+      "sha256": "9e736e99664f145301ab5efae384f13c46e27de929c778576866f4719c8ff1e7"
+    },
+    {
+      "path": "src/assets/mockups/web-personal-portfolio-site.jpg",
+      "sha256": "5ffce61434fdcd6acd1c3e73215113891d621c8765140e7eafe5a399d691fbd6"
+    },
+    {
+      "path": "src/assets/mockups/web-responsive.jpg",
+      "sha256": "5849a12bad177cd396bcf4d74fda24990ac30bc174615e2ae217cc91e2ad7fd4"
+    },
+    {
+      "path": "src/assets/mockups/web-website-redesign.jpg",
+      "sha256": "a4de9b3bc93056b4ba6ae53adbf1d5d54ec8efe1f6a152819547ee2dd98ab782"
+    },
+    {
+      "path": "src/assets/mockups/web-wordpress-website-concept.jpg",
+      "sha256": "0604ebd6aa8db7ad5595274699e8e93d1a503d47b39399b5036b7f5d7b617f19"
+    }
+  ]
+}
