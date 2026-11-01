@@ -11,6 +11,6 @@
 
 ## Project rules
 - Contact details live only in src/lib/site-config.ts; components read from it so details change in one place.
-- Portfolio entries are generated from typed data in src/data/portfolio.ts; real client work goes in REAL_PROJECTS with authenticity "client", because concept work must never be presented as client work.
+- Portfolio uses a single canonical published inventory in src/data/portfolio.ts, derived from independently authored briefs in src/data/portfolio-briefs.ts; replace concepts rather than appending when adding verified work so the global count stays governed by the inventory tests.
 - Contact form inserts into the contact_inquiries table (insert-only for visitors) — no read access from the browser.
-- Portfolio imagery is mapped by exact category and subcategory in src/data/portfolio-images.ts and rendered by ProjectImage for cards and dialogs; this keeps deliverable images consistent without assigning unrelated photos.
+- Portfolio imagery is mapped by canonical project slug in src/data/portfolio-images.ts and rendered by ProjectImage for cards and dialogs; each project owns a separate original asset, with content-hash and perceptual audits rejecting duplicates.

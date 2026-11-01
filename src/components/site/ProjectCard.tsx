@@ -28,7 +28,7 @@ export function ProjectCard({ p, onOpen }: { p: Project; onOpen: (p: Project) =>
       <div className="flex flex-1 flex-col p-5">
         <p className="eyebrow text-[0.62rem] text-muted-foreground">{short(p.category)} · {p.industry}</p>
         <h3 className="mt-2 font-display text-lg leading-snug">{p.title}</h3>
-        <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{p.objective}</p>
+        <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{p.overview}</p>
         <button type="button" onClick={() => onOpen(p)} className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-ink underline-offset-4 hover:underline">
           Explore case study <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </button>
@@ -58,13 +58,17 @@ export function ProjectDialog({ p, onClose }: { p: Project | null; onClose: () =
                 </DialogDescription>
               </div>
               <dl className="grid gap-5 sm:grid-cols-2">
-                <div><dt className="eyebrow text-[0.62rem] text-lime-deep">Objective</dt><dd className="mt-1.5 text-sm">{p.objective}</dd></div>
-                <div><dt className="eyebrow text-[0.62rem] text-lime-deep">Approach</dt><dd className="mt-1.5 text-sm">{p.approach}</dd></div>
-                <div><dt className="eyebrow text-[0.62rem] text-lime-deep">My role</dt><dd className="mt-1.5 text-sm">Strategy, design and implementation of the concept from brief to final deliverables.</dd></div>
+                <div className="sm:col-span-2"><dt className="eyebrow text-[0.62rem] text-lime-deep">Overview</dt><dd className="mt-1.5 text-sm">{p.overview}</dd></div>
+                <div><dt className="eyebrow text-[0.62rem] text-lime-deep">Challenge & objective</dt><dd className="mt-1.5 text-sm">{p.challenge}</dd></div>
+                <div><dt className="eyebrow text-[0.62rem] text-lime-deep">Proposed solution & approach</dt><dd className="mt-1.5 text-sm">{p.solution}</dd></div>
+                <div className="sm:col-span-2"><dt className="eyebrow text-[0.62rem] text-lime-deep">Concept execution</dt><dd className="mt-1.5 text-sm">{p.execution}</dd></div>
                 <div>
                   <dt className="eyebrow text-[0.62rem] text-lime-deep">Deliverables</dt>
                   <dd><ul className="mt-1.5 space-y-1 text-sm">{p.deliverables.map((d) => <li key={d} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-lime-deep" />{d}</li>)}</ul></dd>
                 </div>
+                <div><dt className="eyebrow text-[0.62rem] text-lime-deep">Proposed tools</dt><dd className="mt-1.5 text-sm">{p.tools.join(" · ")}</dd></div>
+                <div className="sm:col-span-2"><dt className="eyebrow text-[0.62rem] text-lime-deep">Intended outcome</dt><dd className="mt-1.5 text-sm">{p.outcome}</dd></div>
+                <div className="sm:col-span-2"><dt className="eyebrow text-[0.62rem] text-lime-deep">Categories</dt><dd className="mt-1.5 text-sm text-muted-foreground">{p.tags.join(" · ")}</dd></div>
                 {p.results && <div className="sm:col-span-2"><dt className="eyebrow text-[0.62rem] text-lime-deep">Verified results</dt><dd className="mt-1.5 text-sm">{p.results}</dd></div>}
               </dl>
               <Button asChild variant="ink" size="xl" className="w-full sm:w-auto">
