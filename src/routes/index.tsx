@@ -181,7 +181,7 @@ function PortfolioPreview() {
   const [filter, setFilter] = useState<ServiceId | "all">("all");
   const [active, setActive] = useState<Project | null>(null);
   const shown = useMemo(() => {
-    if (filter === "all") return SERVICES.map((s, i) => PROJECTS.filter((p) => p.category === s.id)[i * 3]!);
+    if (filter === "all") return SERVICES.flatMap((s) => PROJECTS.filter((p) => p.category === s.id).slice(0, 1));
     return PROJECTS.filter((p) => p.category === filter).slice(0, 6);
   }, [filter]);
   return (

@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — 300 Concept Projects | Mercy Digital Agency" },
+      { title: `Portfolio — ${PROJECTS.length} Concept Projects | Mercy Digital Agency` },
       { name: "description", content: "Browse original concept projects across social media, email marketing, websites, Shopify, online courses and digital marketing." },
       { property: "og:title", content: "Portfolio | Mercy Digital Agency" },
       { property: "og:description", content: "Searchable portfolio of concept projects across six freelance digital service areas." },
@@ -42,7 +42,7 @@ function PortfolioPage() {
     return PROJECTS.filter(
       (p) =>
         (cat === "all" || p.category === cat) &&
-        (!s || `${p.title} ${p.subcategory} ${p.industry}`.toLowerCase().includes(s)),
+        (!s || `${p.title} ${p.subcategory} ${p.industry} ${p.overview} ${p.tags.join(" ")}`.toLowerCase().includes(s)),
     );
   }, [cat, q]);
 
