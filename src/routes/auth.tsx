@@ -1,0 +1,11 @@
+import { createFileRoute, Link, useNavigate } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
+import { lovable } from '@/integrations/lovable';
+import { Button } from '@/components/ui/button';
+export const Route=createFileRoute('/auth')({head:()=>({meta:[{title:'Administrator sign-in — Mercy Digital Agency'},{name:'description',content:'Secure administrator access for Mercy Digital Agency.'},{property:'og:title',content:'Mercy Digital Agency administrator sign-in'},{property:'og:description',content:'Secure team directory management.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary'}]}),component:Auth});
+function Auth(){const navigate=useNavigate();const [error,setError]=useState('');const [busy,setBusy]=useState(false);const {data:user}=useQuery({queryKey:['account'],queryFn:async()=>{const {data}=await supabase.auth.getUser();return data.user;}});useEffect(()=>{if(user) void navigate({to:'/admin/interns'});},[user,navigate]);
+ async function login(provider:'google'|'lovable'){setBusy(true);setError('');try{const result=await lovable.auth.signInWithOAuth(provider,{redirect_uri:`${window.location.origin}/auth`});if(result.error)throw result.error;const {data}=await supabase.auth.getUser();if(data.user) await navigate({to:'/admin/interns'});}catch(e){setError(e instanceof Error?e.message:'Sign-in failed');}finally{setBusy(false);}}
+ return <main className="section-dark grid min-h-screen place-items-center px-6"><div className="w-full max-w-md"><Link to="/" className="font-display text-2xl">Mercy Digital Agency</Link><h1 className="mt-12 font-display text-4xl">Administrator sign-in</h1><div className="mt-8 flex flex-col gap-4"><Button variant="lime" disabled={busy} onClick={()=>login('google')}>Continue with Google</Button><Button variant="outline" disabled={busy} onClick={()=>login('lovable')}>Continue with Lovable</Button></div>{error && <p role="alert" className="mt-6 text-destructive">{error}</p>}</div></main>;
+}
