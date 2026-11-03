@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { PROJECTS } from "@/data/portfolio";
-import audit from "@/data/portfolio-image-audit.json";
+const audit: { count: number; assets: { slug: string; dimensions: number[]; path: string; sha256: string }[]; near_duplicate_candidates: unknown[] } = JSON.parse(readFileSync(resolve("src/data/portfolio-image-audit.json"), "utf8"));
 
 describe("global image audit", () => {
   it("contains exactly 150 separate image files with no renamed duplicate bytes", () => {
