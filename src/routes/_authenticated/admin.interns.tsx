@@ -17,7 +17,7 @@ function AdminInterns(){
  const [form,setForm]=useState<InternInput|null>(null),[languages,setLanguages]=useState(''),[file,setFile]=useState<File|null>(null),[busy,setBusy]=useState(false),[message,setMessage]=useState(''),[deleting,setDeleting]=useState<{id:string;full_name:string}|null>(null);
  const [name,setName]=useState<string|null>(null);
  async function signOut(){await cache.cancelQueries();cache.clear();await supabase.auth.signOut();await navigate({to:'/auth',replace:true});}
- function edit(value:InternInput){setForm(value);setLanguages(value.languages.join(', '));setFile(null);setMessage('');}
+ function edit(value:Omit<InternInput,'status'> & {status:string}){setForm({...value,status:value.status==='inactive'?'inactive':'active'});setLanguages(value.languages.join(', '));setFile(null);setMessage('');}
  async function submit(event:FormEvent){event.preventDefault();if(!form)return;setBusy(true);setMessage('');let uploaded='';try{
   let values=internSchema.parse({...form,languages:languages.split(',').map(v=>v.trim()).filter(Boolean)});
   if(file){if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>5*1024*1024)throw new Error('Choose a JPG, PNG or WebP image under 5 MB.');const ext=file.type==='image/jpeg'?'jpg':file.type==='image/png'?'png':'webp';uploaded=`${crypto.randomUUID()}.${ext}`;const result=await supabase.storage.from('intern-portraits').upload(uploaded,file,{contentType:file.type});if(result.error)throw result.error;values={...values,picture_path:uploaded,profile_picture_url:''};}
