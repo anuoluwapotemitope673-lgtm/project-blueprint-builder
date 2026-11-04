@@ -1,6 +1,6 @@
 # Portfolio restructuring
-- [ ] Inventory existing projects and duplicates.
-- [ ] Curate exactly 150 distinct concepts with complete project-specific case studies.
-- [ ] Create 150 unique relevant images and a global duplicate-image audit.
+- [x] Inventory existing projects and duplicates.
+- [x] Curate exactly 150 distinct concepts with complete project-specific case studies.
+- [x] Create 150 unique relevant images and a global duplicate-image audit.
 - [ ] Update all portfolio displays and validate counts, filters, images, details and responsive layouts.
 - [ ] Review the new interns-directory brief and PDF, then implement public profiles and secure intern management.
