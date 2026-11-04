@@ -17,7 +17,7 @@ export const getPublicInterns = createServerFn({ method: 'GET' })
   return await Promise.all((result.data ?? []).map(async row => {
    if (!row.picture_path) return row;
    const signed = await client.storage.from('intern-portraits').createSignedUrl(row.picture_path, 3600);
-   const browserUrl = import.meta.env.VITE_SUPABASE_URL;
+   const browserUrl = import.meta.env['VITE_SUPABASE_URL'];
    return { ...row, profile_picture_url: signed.data?.signedUrl.replace(url, browserUrl) ?? '' };
   }));
  });

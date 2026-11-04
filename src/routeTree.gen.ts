@@ -10,11 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as InternSlugRouteImport } from './routes/intern.$slug'
+import { Route as AuthenticatedAdminInternsRouteImport } from './routes/_authenticated/admin.interns'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -22,31 +35,62 @@ const PortfolioRoute = PortfolioRouteImport.update({
   path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InternSlugRoute = InternSlugRouteImport.update({
+  id: '/intern/$slug',
+  path: '/intern/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminInternsRoute =
+  AuthenticatedAdminInternsRouteImport.update({
+    id: '/admin/interns',
+    path: '/admin/interns',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/portfolio': typeof PortfolioRoute
+  '/intern/$slug': typeof InternSlugRoute
+  '/admin/interns': typeof AuthenticatedAdminInternsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/portfolio': typeof PortfolioRoute
+  '/intern/$slug': typeof InternSlugRoute
+  '/admin/interns': typeof AuthenticatedAdminInternsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
   '/portfolio': typeof PortfolioRoute
+  '/intern/$slug': typeof InternSlugRoute
+  '/_authenticated/admin/interns': typeof AuthenticatedAdminInternsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/portfolio'
+  fullPaths: '/' | '/auth' | '/portfolio' | '/intern/$slug' | '/admin/interns'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/portfolio'
-  id: '__root__' | '/' | '/portfolio'
+  to: '/' | '/auth' | '/portfolio' | '/intern/$slug' | '/admin/interns'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/auth'
+    | '/portfolio'
+    | '/intern/$slug'
+    | '/_authenticated/admin/interns'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
   PortfolioRoute: typeof PortfolioRoute
+  InternSlugRoute: typeof InternSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +102,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portfolio': {
       id: '/portfolio'
       path: '/portfolio'
@@ -65,12 +123,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/intern/$slug': {
+      id: '/intern/$slug'
+      path: '/intern/$slug'
+      fullPath: '/intern/$slug'
+      preLoaderRoute: typeof InternSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin/interns': {
+      id: '/_authenticated/admin/interns'
+      path: '/admin/interns'
+      fullPath: '/admin/interns'
+      preLoaderRoute: typeof AuthenticatedAdminInternsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminInternsRoute: typeof AuthenticatedAdminInternsRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminInternsRoute: AuthenticatedAdminInternsRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
   PortfolioRoute: PortfolioRoute,
+  InternSlugRoute: InternSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

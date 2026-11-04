@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, UserRound, LogOut } from "lucide-react";
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from '@tanstack/react-router';
+import { supabase } from '@/integrations/supabase/client';
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -10,11 +13,15 @@ export const NAV = [
   { label: "Services", hash: "services" },
   { label: "Portfolio", hash: "portfolio" },
   { label: "About", hash: "about" },
+  { label: "Interns", hash: "interns" },
   { label: "Process", hash: "process" },
   { label: "Contact", hash: "contact" },
 ];
 
 export function Header() {
+  const cache = useQueryClient(); const navigate = useNavigate();
+  const { data: user } = useQuery({ queryKey: ['account'], queryFn: async () => { const { data } = await supabase.auth.getUser(); return data.user; } });
+  async function signOut() { await cache.cancelQueries(); cache.clear(); await supabase.auth.signOut(); await navigate({ to: '/auth', replace: true }); }
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -63,6 +70,8 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <Button asChild variant="ghostLight" size="icon" title={user ? 'Manage interns' : 'Administrator sign-in'}><Link to={user ? '/admin/interns' : '/auth'} aria-label={user ? 'Manage interns' : 'Administrator sign-in'}><UserRound className="h-4 w-4"/></Link></Button>
+          {user && <Button variant="ghostLight" size="icon" title="Sign out" aria-label="Sign out" onClick={signOut}><LogOut className="h-4 w-4"/></Button>}
           <Button asChild variant="lime" className="hidden h-10 px-5 sm:inline-flex">
             <Link to="/" hash="contact">Let's Work Together</Link>
           </Button>

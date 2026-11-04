@@ -8,6 +8,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { MockupArt } from "@/components/site/MockupArt";
 import { ProjectCard, ProjectDialog } from "@/components/site/ProjectCard";
 import { ContactForm } from "@/components/site/ContactForm";
+import { InternDirectory } from "@/components/site/InternDirectory";
+import { internQueries } from "@/lib/intern-queries";
 import portrait from "@/assets/mercy-portrait.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -21,6 +23,8 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(internQueries()),
+  pendingComponent: () => <div className="section-light grid min-h-screen place-items-center" role="status">Loading Mercy Digital Agency…</div>,
   validateSearch: (s) => searchSchema.parse({ service: searchSchema.shape.service.safeParse(s["service"]).success ? s["service"] : undefined }),
   head: () => ({
     meta: [
@@ -49,6 +53,7 @@ function Home() {
         <Services />
         <PortfolioPreview />
         <About />
+        <InternDirectory />
         <WhyMe />
         <Process />
         <Feedback />

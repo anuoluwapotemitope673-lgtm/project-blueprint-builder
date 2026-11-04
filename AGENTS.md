@@ -14,3 +14,5 @@
 - Portfolio uses a single canonical published inventory in src/data/portfolio.ts, derived from independently authored briefs in src/data/portfolio-briefs.ts; replace concepts rather than appending when adding verified work so the global count stays governed by the inventory tests.
 - Contact form inserts into the contact_inquiries table (insert-only for visitors) — no read access from the browser.
 - Portfolio imagery is mapped by canonical project slug in src/data/portfolio-images.ts and rendered by ProjectImage for cards and dialogs; each project owns a separate original asset, with content-hash and perceptual audits rejecting duplicates.
+- Interns use public active-only server reads and role-checked administration with RLS; private portrait uploads use expiring signed URLs so inactive profiles have no public read path.
+- Authenticated administration lives under the pathless authenticated layout; account lifecycle triggers assign privileges only from verified account email, never editable profile metadata.
