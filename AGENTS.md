@@ -15,4 +15,5 @@
 - Contact form inserts into the contact_inquiries table (insert-only for visitors) — no read access from the browser.
 - Portfolio imagery is mapped by canonical project slug in src/data/portfolio-images.ts and rendered by ProjectImage for cards and dialogs; each project owns a separate original asset, with content-hash and perceptual audits rejecting duplicates.
 - Interns use public active-only server reads and role-checked administration with RLS; private portrait uploads use expiring signed URLs so inactive profiles have no public read path.
+- Normalize Fiverr seller-edit URLs to public profile URLs before rendering contact actions so visitors never land on account-edit pages.
 - Authenticated administration lives under the pathless authenticated layout; account lifecycle triggers assign privileges only from verified account email, never editable profile metadata.
