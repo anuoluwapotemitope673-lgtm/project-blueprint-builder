@@ -5,7 +5,7 @@ import { ArrowRight, ArrowUpRight, Mail, MessageCircle, Plus, Minus, Sparkles, S
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { MockupArt } from "@/components/site/MockupArt";
+import homePortrait from "@/assets/mercy-home-portrait.png.asset.json";
 import { ProjectCard, ProjectDialog } from "@/components/site/ProjectCard";
 import { ContactForm } from "@/components/site/ContactForm";
 import { InternDirectory } from "@/components/site/InternDirectory";
@@ -95,19 +95,8 @@ function Hero() {
             <Button asChild variant="ghostLight" size="xl"><Link to="/" hash="contact">Let's Work Together</Link></Button>
           </div>
         </div>
-        <div className="relative h-[24rem] sm:h-[30rem] lg:col-span-5">
-          <div className="animate-rise absolute left-0 top-6 w-[70%] overflow-hidden rounded-2xl border border-ink-line shadow-lift" style={{ animationDelay: "300ms" }}>
-            <div className="aspect-[4/3]"><MockupArt layout="browser" seed={4021} label="Illustrative website mockup" /></div>
-          </div>
-          <div className="animate-rise absolute right-0 top-24 w-[42%] overflow-hidden rounded-2xl border border-ink-line shadow-lift" style={{ animationDelay: "450ms" }}>
-            <div className="animate-float aspect-[3/4]"><MockupArt layout="phone" seed={77} label="Illustrative social media mockup" /></div>
-          </div>
-          <div className="animate-rise absolute bottom-0 left-[12%] w-[55%] overflow-hidden rounded-2xl border border-ink-line shadow-lift" style={{ animationDelay: "600ms" }}>
-            <div className="aspect-[4/3]"><MockupArt layout="email" seed={913} label="Illustrative email mockup" /></div>
-          </div>
-          <div className="animate-rise absolute -left-2 bottom-20 rounded-full bg-lime px-4 py-2 text-xs font-bold text-ink shadow-lime" style={{ animationDelay: "800ms" }}>
-            6 service areas · 1 point of contact
-          </div>
+        <div className="animate-rise relative mx-auto w-full max-w-md lg:col-span-5" style={{ animationDelay: "300ms" }}>
+          <img src={homePortrait.url} alt="Mercy in her workspace, wearing a white blazer beside her laptop" width={768} height={1365} fetchPriority="high" className="aspect-[3/4] w-full rounded-lg object-cover object-center shadow-lift" />
         </div>
       </div>
       <div className="relative mt-20 overflow-hidden border-y border-ink-line py-4">

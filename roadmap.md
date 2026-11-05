@@ -1,4 +1,9 @@
 # Portfolio restructuring
+- [x] Replace homepage right-side mockups with the supplied workspace portrait.
+- [ ] Replace the M logo — two original agency logos prepared, awaiting selection.
+- [ ] Make intern profiles contactable on Fiverr — confirm supplied PDF links and obtain any missing URLs.
+- [ ] Complete intern biographies — awaiting accurate biographical details.
+- [ ] Replace portfolio illustrations with job-specific realistic imagery — awaiting confirmation of concept mockups versus real project screenshots.
 - [x] Inventory existing projects and duplicates.
 - [x] Curate exactly 150 distinct concepts with complete project-specific case studies.
 - [x] Create 150 unique relevant images and a global duplicate-image audit.
