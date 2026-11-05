@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, MapPin, Languages } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { internQueries } from '@/lib/intern-queries';
+import { publicContactLink, isFiverrContact } from '@/lib/intern-validation';
 export function InternDirectory() {
  const { data } = useSuspenseQuery(internQueries());
  return <section id="interns" className="section-light px-6 py-24"><div className="mx-auto max-w-7xl">
@@ -12,6 +13,7 @@ export function InternDirectory() {
    <Link to="/intern/$slug" params={{ slug: intern.slug }} className="flex items-start gap-5"><img src={intern.profile_picture_url || undefined} alt={intern.full_name} className="h-24 w-24 shrink-0 rounded-lg bg-muted object-contain" width={96} height={96} /><div><h3 className="font-display text-2xl">{intern.full_name}</h3><p className="mt-2 text-sm leading-relaxed">{intern.profile_title}</p></div></Link>
    <p className="mt-5 flex items-center gap-2 text-sm text-muted-foreground"><MapPin size={15}/>{intern.location}</p><p className="mt-2 flex items-start gap-2 text-sm text-muted-foreground"><Languages size={15} className="mt-1 shrink-0"/>{intern.languages.join(', ')}</p>
    <Button asChild variant="outline" className="mt-6"><Link to="/intern/$slug" params={{ slug: intern.slug }}>View Profile <ArrowUpRight size={16}/></Link></Button>
+   {publicContactLink(intern.contact_link) && <Button asChild variant="lime" className="ml-2 mt-6"><a href={publicContactLink(intern.contact_link)} target="_blank" rel="noopener noreferrer">{isFiverrContact(intern.contact_link) ? 'Contact on Fiverr' : 'Contact'} <ArrowUpRight size={16}/></a></Button>}
   </article>)}</div>}
  </div></section>;
 }

@@ -1,10 +1,16 @@
 # Portfolio restructuring
+- [x] Replace homepage right-side mockups with the supplied workspace portrait.
+- [ ] Replace the M logo — two original agency logos prepared, awaiting selection.
+- [x] Add public Fiverr contacts from the two supplied seller links for Mercy and Emmanuella.
+- [ ] Add Fiverr contacts for Word Hapim, Emilyly, Emily Morgan and Camila — awaiting their URLs.
+- [x] Complete all six About sections using the supplied professional specialities without inventing experience.
+- [ ] Replace portfolio illustrations with job-specific realistic imagery — awaiting confirmation of concept mockups versus real project screenshots.
 - [x] Inventory existing projects and duplicates.
 - [x] Curate exactly 150 distinct concepts with complete project-specific case studies.
 - [x] Create 150 unique relevant images and a global duplicate-image audit.
 - [x] Update all portfolio displays and validate counts, filters, images, details and responsive layouts.
 - [x] Implement public intern profiles and role-protected management using the six supplied records and portraits.
 - [ ] Verify administrator create/edit/delete/upload end-to-end — awaiting the first sign-in with the authorized account.
-- [ ] Complete intern contact links and biographies — awaiting details not included in the PDF.
+- [ ] Add richer intern biographies — awaiting any additional accurate details beyond supplied specialities.
 - [ ] Add canonical profile URLs — awaiting a published primary domain.
 - [ ] Replace low-resolution PDF portraits with higher-resolution originals — awaiting original images.
