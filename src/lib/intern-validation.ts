@@ -1,4 +1,19 @@
 import { z } from 'zod';
+export function publicContactLink(value: string) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:') return '';
+    if (['fiverr.com', 'www.fiverr.com'].includes(url.hostname)) {
+      const edit = url.pathname.match(/^\/sellers\/([a-zA-Z0-9_]+)\/edit\/?$/);
+      if (edit) return `https://www.fiverr.com/${edit[1]}`;
+    }
+    return url.href;
+  } catch { return ''; }
+}
+export function isFiverrContact(value: string) {
+  try { return ['fiverr.com', 'www.fiverr.com'].includes(new URL(value).hostname); }
+  catch { return false; }
+}
 export const internSchema = z.object({
   id: z.string().uuid().optional(),
   full_name: z.string().trim().min(1).max(120),

@@ -5,6 +5,7 @@ import { internQueries } from '@/lib/intern-queries';
 import { Header } from '@/components/site/Header';
 import { Footer } from '@/components/site/Footer';
 import { Button } from '@/components/ui/button';
+import { publicContactLink, isFiverrContact } from '@/lib/intern-validation';
 export const Route = createFileRoute('/intern/$slug')({
  loader: async ({ context, params }) => { const rows = await context.queryClient.ensureQueryData(internQueries(params.slug)); const intern = rows[0]; if (!intern) throw notFound(); return { intern }; },
  head: ({ loaderData }) => { const i=loaderData?.intern; const title = `${i?.full_name ?? 'Profile not found'} — Mercy Digital Agency`; const description=i?.bio || i?.profile_title || 'Intern profile unavailable.'; const image=i?.profile_picture_url; return { meta: [{title},{name:'description',content:description},{property:'og:title',content:title},{property:'og:description',content:description},{property:'og:type',content:'profile'},{name:'twitter:card',content:'summary_large_image'},...(image?.startsWith('https://') ? [{property:'og:image',content:image},{name:'twitter:image',content:image}] : [])] }; },
